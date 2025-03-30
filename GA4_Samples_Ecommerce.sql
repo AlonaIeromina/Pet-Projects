@@ -1,3 +1,5 @@
+-- Working with https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=ga4_obfuscated_sample_ecommerce&t=events_20210131&page=table
+
 -- Data preparation for building reports in BI systems
 
 select
