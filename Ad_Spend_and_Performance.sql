@@ -1,3 +1,19 @@
+/*Task Summary: Aggregating Advertising Platform Data in SQL
+Objective:
+Combine data from Facebook Ads and Google Ads to create a unified report of marketing campaign performance.
+Steps:
+Merge Facebook Ads Data:
+	Join facebook_ads_basic_daily, facebook_adset, and facebook_campaign.
+	Extract key fields
+Merge Google Ads Data:
+	Combine the first CTE with google_ads_basic_daily.
+	Ensure all relevant fields from both sources are included.
+Create a Final Aggregated Table:
+	Select key columns
+	Aggregate metrics by ad_date, media_source, campaign_name, adset_name
+Expected Outcome:
+A single dataset summarizing Facebook & Google Ads performance per campaign and ad set per day.*/
+
 -- Step 1: First CTE to combine data from facebook_ads_basic_daily, facebook_adset, and facebook_campaign
 WITH facebook_data AS (
 SELECT
