@@ -1,3 +1,10 @@
+/*Combining two advertising campaign tables.
+
+Extracting utm_campaign from a url_parameters field, which satisfies the particular conditions
+(if the value of utm_campaign in utm_parameters is 'nan', then it must be empty (i.e. null) in the resulting table).
+
+Decoding Cyrillic letters encoded in a url string by creating a temporary function.*/
+
 CREATE OR REPLACE FUNCTION urldecode(p varchar) RETURNS varchar AS $$
 SELECT convert_from( CAST(E'\\x' || string_agg( CASE WHEN length(r.m[1]) = 1 THEN encode(convert_to(r.m[1], 'SQL_ASCII'), 'hex')
                                                      ELSE substring(r.m[1] from 2 for 2) END, '') AS bytea), 'UTF8')
